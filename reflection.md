@@ -1,9 +1,11 @@
-Use this file to record your reflection on this assignment.
 
 - What are your initial impressions of how `Encapsulation` affects your programming?
-    All attributes are private. I have methods to access or to modify them. 
+
+    Create public methods to access or change private attributes, which helps keep them secure. 
+
 - What worked, what didn't, what advice would you give someone taking this course in the future?
-    Follow the instructions, create the classes one at a time, and finally compile them together to run in the main.
-    Understanding which class the methods belong is the key. 
-    Always test the codes to see how it works and improve it as you go. 
+
+    Follow the instructions, create each class one at a time, and then put them together to run in main.
+    It is improtant to understand which class each method belongs to. 
+    Always test your codes to see how it works and make improvements if needed. 
 
