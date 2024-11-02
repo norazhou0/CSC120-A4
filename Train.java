@@ -1,17 +1,15 @@
 import java.util.ArrayList;
 
 public class Train {
-  /* Engine */
   private Engine engine;
-  /* Car */
   private ArrayList < Car > cars;
 
   /**
-   * Constructor
-   * @param fuelType
-   * @param fuelCapacity
-   * @param nCars
-   * @param passengerCapacity
+   * Constructor for Train
+   * @param fuelType of the train
+   * @param fuelCapacity of the train
+   * @param nCars of the train
+   * @param passengerCapacity of the train
    */
   public Train(FuelType fuelType, double fuelCapacity, int nCars, int passengerCapacity) {
     // set the current fuel to be full
@@ -24,15 +22,23 @@ public class Train {
     }
   }
 
-  /* Getters */
   public Engine getEngine() {
     return this.engine;
   }
+
+  /**
+   * Method that gets the specific Car
+   * @param i the index of the Car
+   * @return the Car
+   */
   public Car getCar(int i) {
     return cars.get(i);
   }
 
-  /* Sum of all car capacity */
+  /**
+   * Method for getting the maximum capacity
+   * @return the maximum capacity of the train
+   */
   public int getMaxCapacity() {
     // initialize the max capacity 
     int maxCapacity = 0;
@@ -42,7 +48,10 @@ public class Train {
     return maxCapacity;
   }
 
-  /* Sum of all seats remaining */
+  /**
+   * Method for getting the remaining seats
+   * @return seats left on the train
+   */
   public int seatsRemaining() {
     // initialize the remaining seats 
     int seatsLeft = 0;
@@ -52,7 +61,9 @@ public class Train {
     return seatsLeft;
   }
 
-  /* Print out the car and passenger information */
+  /**
+   * Method that prints the car and passenger information
+   */
   public void printManifest() {
     System.out.println("Current onbard in the train: ");
     for (Car c: cars) {

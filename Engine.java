@@ -1,17 +1,14 @@
 
 public class Engine {
-  /* FuelType to store the type of fuel */
   private FuelType fuelType;
-  /* Double to store the current fuel level */
   private double currentFuel;
-  /* Double to store the max fuel level */
   private double maxFuel;
 
   /**
-   * Constructor
-   * @param fuelType
-   * @param currentFuel
-   * @param maxFuel
+   * Constructor for Engine
+   * @param fuelType of the engine
+   * @param currentFuel of the engine
+   * @param maxFuel of the engine
    */
   public Engine(FuelType fuelType, double currentFuel, double maxFuel) {
     this.fuelType = fuelType;
@@ -19,7 +16,6 @@ public class Engine {
     this.maxFuel = maxFuel;
   }
 
-  /* Getters */
   public FuelType getFuelType() {
     return this.fuelType;
   }
@@ -30,12 +26,17 @@ public class Engine {
     return this.maxFuel;
   }
 
-  /* Create a refuel method which will reset the Engine's current fuel level to the maximumn */
+  /**
+   * Method that resets the Engine's current fuel level to the maximumn 
+   */
   public void refuel() {
     this.currentFuel = this.maxFuel;
   }
 
-  /* The method will decrease the current fuel level and indicate if the fuel level is above 0 or not*/
+  /**
+   * Method for train to go
+   * @return if there's fuel left
+   */
   public boolean go() {
     if (this.currentFuel > 0) {
       // Decrase the current fuel by 1 when there's fuel

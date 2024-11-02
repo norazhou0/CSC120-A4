@@ -1,17 +1,23 @@
 public class Passenger {
 
     private String name;
-  
+
+    /**
+     * Constructor of Passenger
+     * @param name of the passenger
+     */
     public Passenger(String name) {
       this.name = name;
     }
   
-    /* Get passenger name */
     public String getName() {
       return this.name;
     }
   
-    /* A method for passengers to board */
+    /**
+     * Method for passengers to board the car
+     * @param c the Car
+     */
     public void boardCar(Car c) {
       try {
         c.addPassenger(this);
@@ -21,7 +27,10 @@ public class Passenger {
       }
     }
   
-    /* A method for passengers to get off */
+    /**
+     * Method for passengers to get off the car
+     * @param c the Car
+     */
     public void getOffCar(Car c) {
       try {
         c.removePassenger(this);
@@ -30,13 +39,14 @@ public class Passenger {
         System.err.println(e.getMessage());
       }
     }
+
     public static void main(String[] args) {
       Passenger myPassenger = new Passenger("Nora");
-      Passenger Passenger_2 = new Passenger("Emma");
+      Passenger passenger_2 = new Passenger("Emma");
       Car myCar = new Car(1);
       myPassenger.boardCar(myCar);
       myCar.printManifest();
-      Passenger_2.boardCar(myCar);
+      passenger_2.boardCar(myCar);
       myCar.printManifest();
     }
   

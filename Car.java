@@ -1,35 +1,38 @@
 import java.util.ArrayList;
 
 public class Car {
-  /* ArrayList to store passenger information */
   private ArrayList < Passenger > passengers;
-  /* Integer to store the maximun capacity */
   private int maxCapaciy;
 
   /**
-   * Constructor
-   * Initialize an empty array list for passgeners
-   * @param max
+   * Constructor for Car
+   * @param maxCapacity of the car
    */
   public Car(int maxCapaciy) {
     passengers = new ArrayList < > ();
     this.maxCapaciy = maxCapaciy;
   }
 
-  /* Get the maximun capacity of the car */
   public int getCapacity() {
     return this.maxCapaciy;
   }
 
-  /* An accessor-like method that returns remaining seats */
+  /**
+   * Method for getting the number of remaining seats
+   * @return the number of remaining seats
+   */
   public int seatsRemaining() {
     return this.maxCapaciy - passengers.size();
   }
 
-  /* Add passengers */
+  /**
+   * Method for adding passengers
+   * @param p passenger
+   * @return if the passenger is onboard
+   */
   public boolean addPassenger(Passenger p) {
-    // check if seats are available 
-    if (seatsRemaining() > 0) {
+    // check if there's seat available and the passenger isn't already onboard
+    if (seatsRemaining() > 0 && !passengers.contains(p)){
       // add the passenger
       passengers.add(p);
       return true;
@@ -39,7 +42,11 @@ public class Car {
     }
   }
 
-  /* Remove passengers */
+  /**
+   * Method for removing passengers
+   * @param p passenger
+   * @return if the passenger is deboard
+   */
   public boolean removePassenger(Passenger p) {
     // confirm that the passenger is actually onboard
     if (passengers.contains(p)) {
@@ -52,7 +59,9 @@ public class Car {
     }
   }
 
-  /* A method that prints out passengers aboard */
+  /**
+   * Method that prints a nicely-formatted roster of all Passengers currently aboard the car
+   */
   public void printManifest() {
     if (passengers.size() > 0) {
       System.out.println("Current onbard: ");
